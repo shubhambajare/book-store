@@ -49,7 +49,8 @@ export const BookReducer = (state = initialState, action: { type: string, payloa
         case SET_BOOKS_DATA: {
             return {
                 ...state,
-                booksData: action.payload
+                booksData: action.payload,
+                isGridViewActive: true
             };
         }
         case SET_SELECTED_BOOK: {

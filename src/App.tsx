@@ -1,12 +1,15 @@
-import { useEffect, useState } from 'react'
 import './App.css'
+
+import { useEffect, useState } from 'react'
+import { CircularProgress, Snackbar } from '@mui/material'
+import { useDispatch, useSelector } from 'react-redux'
+
 import { getBooks } from './api/BooksApi'
 import BookResult from './components/BookResult'
 import SearchBar from './components/SearchBar'
-import { CircularProgress, Snackbar } from '@mui/material'
 import NoData from './components/NoData'
-import { useDispatch, useSelector } from 'react-redux'
-import { setBooksData, setIsGridViewActive, setSelectedPage, setTotalRecords } from './store/actions/BookActions'
+
+import { setBooksData, setSelectedPage, setTotalRecords } from './store/actions/BookActions'
 import { InitialState } from './store/reducers/BookReducer'
 
 function App() {
@@ -37,7 +40,6 @@ function App() {
             return { totalItems: 0, items: [] }
         })
         dispatch(setBooksData(result.items))
-        dispatch(setIsGridViewActive(true))
         dispatch(setTotalRecords(result.totalItems))
         setIsLoading(false)
     }

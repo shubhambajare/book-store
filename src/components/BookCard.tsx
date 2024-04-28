@@ -1,6 +1,7 @@
 import { Button, Card, CardActions, CardContent, CardMedia, Grid, Typography } from '@mui/material'
-import { Book } from '../model/Book'
 import { useDispatch } from 'react-redux'
+
+import { Book } from '../model/Book'
 import { setSelectedBook } from '../store/actions/BookActions';
 
 export default function BookCard(props: { book: Book }) {
@@ -22,7 +23,7 @@ export default function BookCard(props: { book: Book }) {
                 <CardMedia
                     sx={{ height: 140 }}
                     image={props.book.volumeInfo.imageLinks?.thumbnail || require('/src/assets/book.png')}
-                    title="green iguana"
+                    title={props.book.volumeInfo.title}
                 />
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
