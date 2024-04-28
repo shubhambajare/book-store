@@ -1,0 +1,14 @@
+.bs-no-data-container {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.bs-progressbar-container {
+    text-align: center;
+    margin-top: 10%;
+}
+
+.MuiPagination-ul {
+    align-items: center;
+    justify-content: center;
+}
